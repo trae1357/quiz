@@ -1,29 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="quiz.css">
     <title>Java Quiz</title>
 </head>
+
 <body>
+    <div class="quiz_box">
+        <header>
+            <div class="title">Java Quiz!</div>
+            <div class="timer">
+                <div class="time_text">Time left</div>
+                <div class="seconds_left">10</div>
+            </div>
+        </header>
+        <section>
+
+            <div class="que-text">
+                <span>What does HTML stand for?</span>
+            </div>
+            <div class="option_list">
+                <div class="option">
+                    <span>Hyper text processer</span>
+                    <div class="icon check">&#10003;</div>
+                </div>
+                <div class="option">
+                    <span>Hyper text markup langue</span>
+                    <div class="icon cross">&#10060;;</div>
+                </div>
+                <div class="option">
+                    <span>Hyper text Multi langue</span>
+                    <div class="icon">&#10003;</div>
+                </div>
+                <div class="option">
+                    <span>Hyper Tool multi langue</span>
+                    <div class="icon">&#10003;</div>
+                </div>
+
+
+            </div>
+            <footer>
+            <div class="total_right">
+                <span><p>2</p>of<p>5</p>Question</span>
+                </div>
+                <button class="next_button">Next</button>
+        </footer>
+    </section>
+    
+        
+</div>
+</div>
+
+
+
     <div class="start_btn"><button>Start the quiz!</button></div>
     <div class="rules_box">
-        <div class="rules_title"></div>
-        </div>>Rules of the quiz</span>
-        </div>
-        <div class="rules_list">
+        <div class="rules_title">
+            <div class="rules_list">
+                <span>Rules of the quiz</span>
+                <div class="rules">1. You will only have <span>10 seconds</span> to finish each option</div>
+                <div class="rules">2. Once you choose a answer you can not change it</div>
+                <div class="rules">3. Once the timer gets to 0 you cant choose a answer</div>
+                <div class="rules">4. You will get points ONLY for correct answers </div>
 
-        <div class="rules">1. You will only have 10 secons to finish each option</div>
-        <div class="rules">2. Once you choose a answer you can not change it</div>
-        <div class="rules">3. Once the timer gets to 0 you cant choose a answer</div>
-        <div class="rules">4. You will get points ONLY for correct answers </div>
+                <div class="buttons">
 
-        <div class="buttons">
-       
-        <button class="quit">Quit?</button>
-        <button class="continue">Continue!</button>
+                    <button class="quit">Quit?</button>
+                    <button class="continue">Continue!</button>
+                </div>
+            </div>
         </div>
-    </div>
+        <div class="result_box">
+            <div class="done">You have finshed the quiz!</div>
+                <div class="score_text">
+                    <span>Awesome! You got <p>5</p> Out of <p>5</p> Right!</span>
+                </div>
+                <div class="button">
+                    <button class="restart">Restart</button>
+                    <button class="quit">Quit</button>
+                </div>
+
+            </div>
+        </div>
 </body>
+<link rel="stylesheet" href="quiz.js"></link>
 </html>
