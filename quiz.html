@@ -9,12 +9,12 @@
 </head>
 
 <body>
-    <div class="quiz_box">
+    <div class="quiz_box hide">
         <header>
             <div class="title">Java Quiz!</div>
             <div class="timer">
                 <div class="time_text">Time left</div>
-                <div class="seconds_left">10</div>
+                <div class="seconds_left"></div>
             </div>
         </header>
         <section>
@@ -23,7 +23,7 @@
                 <span>What does HTML stand for?</span>
             </div>
             <div class="option_list">
-                <div class="option">
+                <!-- <div class="option">
                     <span>Hyper text processer</span>
                     <div class="icon check">&#10003;</div>
                 </div>
@@ -38,7 +38,7 @@
                 <div class="option">
                     <span>Hyper Tool multi langue</span>
                     <div class="icon">&#10003;</div>
-                </div>
+                </div> -->
 
 
             </div>
@@ -52,12 +52,12 @@
     
         
 </div>
-</div>
+ 
 
 
 
-    <div class="start_btn"><button>Start the quiz!</button></div>
-    <div class="rules_box">
+    
+    <div class="rules_box ">
         <div class="rules_title">
             <div class="rules_list">
                 <span>Rules of the quiz</span>
@@ -69,11 +69,12 @@
                 <div class="buttons">
 
                     <button class="quit">Quit?</button>
-                    <button class="continue">Continue!</button>
+                    <button class="start">Start the quiz</button>
                 </div>
             </div>
         </div>
-        <div class="result_box">
+
+        <div class="result_box hide">
             <div class="done">You have finshed the quiz!</div>
                 <div class="score_text">
                     <span>Awesome! You got <p>5</p> Out of <p>5</p> Right!</span>
@@ -86,5 +87,6 @@
             </div>
         </div>
 </body>
-<link rel="stylesheet" href="quiz.js"></link>
+
+<script src="quiz.js"></script>
 </html>

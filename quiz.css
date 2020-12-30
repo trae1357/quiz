@@ -1,9 +1,4 @@
-{
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
+
 
 body{
     background: lightgreen;
@@ -12,7 +7,7 @@ body{
 .start_btn,
 .rules_box,
 .quiz_box,
-.result_box,
+.result_box
 {
     position: absolute;
     top:45%;
@@ -35,7 +30,7 @@ body{
 }
 
 .rules_list{
-    /* display:none; */
+   
     width: 540px;
     background: white;
     border-radius: 5px;
@@ -85,10 +80,10 @@ body{
     background-color: darkred;
 }
 
-.buttons button.continue{
+.buttons button.start{
     background-color: green;
 }
-.buttons button.continue:hover{
+.buttons button.start:hover{
     background-color:darkgreen;
 }
 .icon{
@@ -171,7 +166,7 @@ section .option_list .option:hover{
     background-color: lightblue;
     border-color: lightcyan;
 }
-.option_list . option:last-child{
+.option_list .option:last-child{
     margin-bottom: 0px;
 }
 .option_list .option .icon{
@@ -221,7 +216,7 @@ footer .total_right span p{
 .total_right span p:first-child{
     padding:1px;
     padding-right:20px;
-    padding-top:;
+    
 }
 footer .next_button{
     height:40px;
@@ -281,4 +276,7 @@ footer .next_button:hover{
 }
 .result_box .buttons button:hover{
     background-color: darkgray;
+}
+.hide{
+    display:none;
 }
