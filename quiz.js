@@ -8,29 +8,35 @@
 //8. The quiz is over once all answers are answered or time is out 
 //9. When the quiz is over save initals in leaderboard 
 
- 
+
 
 var questionArray = [
     {
-        question:"What does HTML stand for?",
-        options:["Hyper Text Processer","Hyper Text markup langue","Hyper text multi lan","Hyper tool multi lang"],
-        answer:1
+        question: "What does HTML stand for?",
+        options: ["Hyper Text Processer", "Hyper Text markup langue", "Hyper text multi lan", "Hyper tool multi lang"],
+        answer: 1
     },
     {
-        question:"What does CSS stand for ?",
-        options:["Carbon study science ","Casscading style sheet","Common study student","cool stuff soon"],
-        answer:1
+        question: "What does CSS stand for ?",
+        options: ["Carbon study science ", "Casscading style sheet", "Common study student", "cool stuff soon"],
+        answer: 1
     },
     {
-    question:"Is coding fun?",
-        options:["Yes","no","kinda","its okay"],
-        answer:0
+        question: "Is coding fun?",
+        options: ["Yes", "no", "kinda", "its okay"],
+        answer: 0
     },
-        {
-        question:"What does VS stand for ?",
-        options:["Visual studio ","Vanity stuff","Very student","Vikings stuff"],
-        answer:0
-        }
+    {
+        question: "What does VS stand for ?",
+        options: ["Visual studio ", "Vanity stuff", "Very student", "Vikings stuff"],
+        answer: 0
+    },
+
+    {
+        question: "How long does it take to learn Java Script?",
+        options: ["You never stop learning ", "6 months", "1 year ", "5 years"],
+        answer: 0
+    }
 ]
 
 var questionIndex = 0
@@ -43,56 +49,108 @@ var quiz_box = document.querySelector(".quiz_box")
 var secondsLeft = document.querySelector(".seconds_left")
 var queText = document.querySelector(".que-text")
 var optionList = document.querySelector(".option_list")
-var timeId = null 
+var timeId = null
 var nextButton = document.querySelector(".next_button")
-
+var playerScore = document.querySelector
+var counter = 1;
+var id
 start.addEventListener("click", function () {
     rules_box.classList.add("hide")
     quiz_box.classList.remove("hide")
     startQuiz()
 })
 
-function displayQuestion(){
+function displayQuestion() {
+    myFunction()
     queText.innerHTML = questionArray[questionIndex].question
-    optionList.innerHTML=""
-    for (let i = 0; i <  questionArray[questionIndex].options.length; i++) {
-        var div=document.createElement("div")
-       div.classList.add("option")
-       var span=document.createElement("span")
-       span.innerHTML=questionArray[questionIndex].options[i]
-       var divIcon= document.createElement("div")
-       divIcon.classList.add("icon")
-       divIcon.innerHTML="&#10003;"
-       div.append(span)
-       div.append(divIcon)
-        
+    optionList.innerHTML = ""
+    document.getElementById("message").innerHTML =""
+    for (let i = 0; i < questionArray[questionIndex].options.length; i++) {
+        var div = document.createElement("div")
+        div.classList.add("option")
+        var span = document.createElement("span")
+
+
+        span.innerHTML = questionArray[questionIndex].options[i]
+
+        var divIcon = document.createElement("div")
+
+        div.append(span)
+        div.append(divIcon)
+        div.setAttribute("data-id", i)
+        div.addEventListener("click", function () {
+
+            id = this.getAttribute("data-id")
+
+        })
         optionList.append(div)
     }
 
 
 }
+
+
 nextButton.addEventListener("click", nextQuestion)
 
-function nextQuestion(){
-   
+function nextQuestion() {
+
+    id= parseInt(id)
+    if (questionIndex < questionArray.length) {
+        console.log(id ,questionArray[questionIndex].answer)
+        if (id === questionArray[questionIndex].answer) {
+             
+         document.getElementById("message").innerHTML = "correct"
+
+        }
+        else {
+            document.getElementById("message").innerHTML = "incorrect"
+        }
+    }
+        
     questionIndex++
-    if(questionIndex<questionArray.length){
-        displayQuestion()
+
+
+    if (questionIndex < questionArray.length) {
+
+        setTimeout(displayQuestion, 2000)
     }
-    else{
+    else {
         clearInterval(timeId)
+        document.querySelector(".result_box").classList.remove("hide")
+        document.querySelector(".quiz_box").classList.add("hide")
     }
-   
+
 }
 
-function startQuiz(){
+
+function startQuiz() {
     timeId = setInterval(countdown, 1000)
-   displayQuestion()
+    displayQuestion()
 
 }
 
 
-function countdown(){
+function countdown() {
     timeLeft--
     secondsLeft.innerHTML = timeLeft
 }
+
+
+function myFunction() {
+    document.getElementById("number").innerHTML = counter++;
+
+}
+
+
+
+
+
+
+
+
+
+
+let arrObj = JSON.parse(localStorage.getItem('highScore')) || [];
+
+arrObj.push(playerScore)
+localStorage.setItem('highScore', JSON.stringify(arrObj))
