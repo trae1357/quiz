@@ -13,7 +13,7 @@
 var questionArray = [
     {
         question: "What does HTML stand for?",
-        options: ["Hyper Text Processer", "Hyper Text markup langue", "Hyper text multi lan", "Hyper tool multi lang"],
+        options: ["Hyper Text Processer", "Hyper Text markup langue", "Hyper text multiple language", "Hyper tool multiple language"],
         answer: 1
     },
     {
@@ -54,6 +54,7 @@ var nextButton = document.querySelector(".next_button")
 var playerScore = document.querySelector
 var counter = 1;
 var id
+var highScore = timeLeft;
 start.addEventListener("click", function () {
     rules_box.classList.add("hide")
     quiz_box.classList.remove("hide")
@@ -112,7 +113,7 @@ function nextQuestion() {
 
     if (questionIndex < questionArray.length) {
 
-        setTimeout(displayQuestion, 2000)
+        setTimeout(displayQuestion, 1000)
     }
     else {
         clearInterval(timeId)
@@ -141,16 +142,30 @@ function myFunction() {
 
 }
 
+function fn1(){
+    var str = document.getElementById("text1").value;
+    var player = {
+        initials: str,
+        score: timeLeft
+        
+    }
+    return player
+}
+
+function refreshPage(){
+    window.location.reload();
+} 
+
+function useLocalStorage(){
+    var player = fn1();
+    localStorage.setItem("HighScore", JSON.stringify(player))
+    
+}
+
+document.getElementById("save").addEventListener("click", useLocalStorage);
+
+//function
+var player = JSON.parse(localStorage.getItem("HighScore"))
+console.log(player)
 
 
-
-
-
-
-
-
-
-let arrObj = JSON.parse(localStorage.getItem('highScore')) || [];
-
-arrObj.push(playerScore)
-localStorage.setItem('highScore', JSON.stringify(arrObj))
