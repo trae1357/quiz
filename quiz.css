@@ -280,3 +280,7 @@ footer .next_button:hover{
 .hide{
     display:none;
 }
+.form-group{
+    background-color: green;
+    color: black;
+}
