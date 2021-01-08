@@ -3,6 +3,9 @@
 The project we are doing is making a quiz around programing. There is going to be a 5 question quiz at the end you will put your high score in to the "Score Board" page.
 
 Here is the following steps to creating the page
+
+
+
 //1. create HTML layout
 
 //2. create css layout to configure with html 
