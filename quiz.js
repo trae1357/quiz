@@ -40,7 +40,7 @@ var questionArray = [
 ]
 
 var questionIndex = 0
-var timeLeft = questionArray.length * 15
+var timeLeft = questionArray.length * 10
 
 var start = document.querySelector(".start")
 
